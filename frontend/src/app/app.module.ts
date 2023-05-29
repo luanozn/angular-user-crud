@@ -1,3 +1,4 @@
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +15,11 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { UserCrudComponent } from './views/user-crud/user-crud.component'
+import { UserCrudComponent } from './views/user-crud/user-crud.component';
+import { RedDirective } from './directives/red.directive';
+import { ForDirective } from './directives/for.directive';
+import { UserCreateComponent } from './components/user/user-create/user-create.component'
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,10 @@ import { UserCrudComponent } from './views/user-crud/user-crud.component'
     FooterComponent,
     NavComponent,
     HomeComponent,
-    UserCrudComponent
+    UserCrudComponent,
+    RedDirective,
+    ForDirective,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,9 @@ import { UserCrudComponent } from './views/user-crud/user-crud.component'
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
