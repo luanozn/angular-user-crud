@@ -1,4 +1,5 @@
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserService } from './components/user/user.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,6 +22,8 @@ import { ForDirective } from './directives/for.directive';
 import { UserCreateComponent } from './components/user/user-create/user-create.component'
 import { MatButtonModule } from '@angular/material/button';
 
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +45,12 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
