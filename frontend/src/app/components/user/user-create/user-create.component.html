@@ -1,3 +1,21 @@
+<mat-card>
+    <mat-card-title>Novo Usuário</mat-card-title>
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="user.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Matrícula" [(ngModel)]="user.registration" name="registration">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone">
+        </mat-form-field>
+    </form>
+</mat-card>
+
 <button mat-raised-button color="primary" (click)="createUser()">
     Salvar
 </button>

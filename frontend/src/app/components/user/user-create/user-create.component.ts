@@ -10,10 +10,10 @@ import { UserService } from './../user.service'
 export class UserCreateComponent implements OnInit{
 
   user: User = {
-    name: 'Test User',
-    registration: '2021101202010044',
-    phone: '64999999999',
-    email: 'luanorizona@hotmail.com'
+    name: '',
+    registration: '',
+    phone: '',
+    email: ''
   }
 
   constructor(private userService: UserService) { }
