@@ -16,7 +16,6 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { UserCrudComponent } from './views/user-crud/user-crud.component';
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { UserCreateComponent } from './components/user/user-create/user-create.component'
@@ -26,7 +25,11 @@ import { HttpClientModule } from '@angular/common/http'
 
 import {FormsModule} from '@angular/forms'
 import {MatFormFieldModule} from '@angular/material/form-field'
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import { UserReadComponent } from './components/user/user-read/user-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort'
 
 @NgModule({
   declarations: [
@@ -35,10 +38,10 @@ import {MatInputModule} from '@angular/material/input'
     FooterComponent,
     NavComponent,
     HomeComponent,
-    UserCrudComponent,
     RedDirective,
     ForDirective,
-    UserCreateComponent
+    UserCreateComponent,
+    UserReadComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,10 @@ import {MatInputModule} from '@angular/material/input'
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     UserService

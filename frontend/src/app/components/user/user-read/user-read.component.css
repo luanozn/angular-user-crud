@@ -1,0 +1,7 @@
+.edit > i {
+    color: green;
+}
+
+.delete > i {
+    color:red
+}
