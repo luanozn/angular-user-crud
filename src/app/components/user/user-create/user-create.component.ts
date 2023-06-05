@@ -42,10 +42,19 @@ export class UserCreateComponent implements OnInit{
   }
 
   createUser() : void {
-    this.userService.create(this.user).subscribe(() => {
-      this.userService.showMessage("Usuário criado com sucesso!")  
-    })
-    this.clearFields()
+    this.userService.create(this.user).subscribe(
+      response => {
+        this.userService.showMessage("Usuário criado com sucesso!");
+        this.clearFields();
+      },
+      error => {
+        if (error.status === 400) {
+          this.userService.showMessage("Matrícula já registrada");
+        } else {
+          this.userService.showMessage("Ocorreu um erro na requisição.");
+        }
+      }
+    );
   }
 }
 
