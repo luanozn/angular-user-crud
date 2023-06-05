@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-user-update',
@@ -22,8 +23,15 @@ export class UserUpdateComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private headerService: HeaderService
+    ) {
 
+      headerService.headerData = {
+        title: 'Atualização de Usuários',
+        icon: 'update',
+        routeUrl:'/users/update'
+      }
   }
 
   ngOnInit(): void {

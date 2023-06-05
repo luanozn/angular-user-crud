@@ -1,3 +1,4 @@
+import { HeaderService } from '../../template/header/header.service';
 import { User } from './../user.model';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,8 +13,12 @@ export class UserReadComponent implements OnInit{
   users: User[] = []
   displayedColumns = ['login', 'name', 'email', 'actions']
 
-  constructor(private userService: UserService) { 
-
+  constructor(private userService: UserService, private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Usuários',
+      icon: 'verified_user',
+      routeUrl:'/users'
+    }
    }
 
   ngOnInit(): void {

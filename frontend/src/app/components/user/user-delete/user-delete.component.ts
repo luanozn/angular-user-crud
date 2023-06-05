@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-user-delete',
@@ -17,8 +18,12 @@ export class UserDeleteComponent implements OnInit {
     email: ''
   }
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) {
-
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Exclusão de Usuários',
+      icon: 'cancel',
+      routeUrl:'/users/delete'
+    }
   }
 
   ngOnInit(): void {
@@ -34,7 +39,7 @@ export class UserDeleteComponent implements OnInit {
 
   delete(): void {
     this.userService.delete(this.user.login).subscribe(() => {
-      this.userService.showMessage('Produto excluído com sucesso')
+      this.userService.showMessage('Usuário excluído com sucesso')
       this.router.navigate(['/users'])
     })
   }

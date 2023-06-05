@@ -1,4 +1,4 @@
-.home {
+.title-type{
     background-color: lightGray;
     height: 100px;
 }
@@ -15,4 +15,34 @@
     padding-left: 40px;
     padding-top: 10px;
     color: black;
+}
+
+.info-type{
+    margin-top: 50px;
+    color: white;
+}
+
+.textTitle{
+    font-size: 3rem;
+    padding-left: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.text{
+    font-size: 1.1rem;
+    padding-left: 40px;
+    padding-top: 10px;
+    color: white;
+}
+
+.content{
+    padding-top: 40px;
+    text-align: justify;
+    font-size: larger;
+    text-decoration: none;
+}
+
+a{
+    color: white;
 }

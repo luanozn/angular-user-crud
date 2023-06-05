@@ -5,3 +5,18 @@
 .delete > i {
     color:red
 }
+
+@media (max-width: 600px) {
+    .responsive-table {
+      overflow-x: auto;
+    }
+  
+    .full-width-table {
+      width: 100%;
+    }
+  
+    .mat-table {
+      min-width: 500px; 
+    }
+  }
+  

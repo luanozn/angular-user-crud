@@ -1,6 +1,7 @@
 import { User } from './../user.model';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../user.service'
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-user-create',
@@ -18,7 +19,21 @@ export class UserCreateComponent implements OnInit{
     email: ''
   }
 
-  constructor(private userService: UserService) { }
+  clearFields(): void {
+    this.user.name = '',
+    this.user.login = '',
+    this.user.phone = '',
+    this.user.email = ''
+  }
+
+
+  constructor(private userService: UserService, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Criação de Usuários',
+      icon: 'add_to_queue',
+      routeUrl:'/users/delete'
+    }
+  }
 
   ngOnInit(): void {
       this.greenDarkStyle = {
@@ -30,6 +45,7 @@ export class UserCreateComponent implements OnInit{
     this.userService.create(this.user).subscribe(() => {
       this.userService.showMessage("Usuário criado com sucesso!")  
     })
+    this.clearFields()
   }
 }
 
