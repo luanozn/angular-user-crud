@@ -9,9 +9,11 @@ import { UserService } from './../user.service'
 })
 export class UserCreateComponent implements OnInit{
 
+  greenDarkStyle: any
+
   user: User = {
     name: '',
-    registration: '',
+    login: '',
     phone: '',
     email: ''
   }
@@ -19,12 +21,14 @@ export class UserCreateComponent implements OnInit{
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-
+      this.greenDarkStyle = {
+        background:"#568203"
+      }
   }
 
   createUser() : void {
     this.userService.create(this.user).subscribe(() => {
-      this.userService.showMessage("Ao goiais veeeelho sem porteraaaaaaa")  
+      this.userService.showMessage("Usuário criado com sucesso!")  
     })
   }
 }

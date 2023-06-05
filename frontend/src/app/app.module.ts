@@ -29,7 +29,9 @@ import {MatInputModule} from '@angular/material/input';
 import { UserReadComponent } from './components/user/user-read/user-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort'
+import { MatSortModule } from '@angular/material/sort';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component'
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { MatSortModule } from '@angular/material/sort'
     RedDirective,
     ForDirective,
     UserCreateComponent,
-    UserReadComponent
+    UserReadComponent,
+    UserUpdateComponent,
+    UserDeleteComponent
   ],
   imports: [
     BrowserModule,

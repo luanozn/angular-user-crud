@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Excluir Usuário</mat-card-title>
+    <form action="">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="user.name" name="name" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Matrícula" [value]="user.login" name="login" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" [value]="user.email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [value]="user.phone" name="phone" disabled>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<div class="buttonBox">
+    <button mat-raised-button color="warn" (click)="delete()">
+        Excluir
+    </button>
+    <button mat-raised-button color="primary" (click)="cancel()">
+        Cancelar
+    </button>
+</div>

@@ -1,7 +1,6 @@
 export interface User {
-    id?: number
+    login: string
     name: string
-    registration: string
     phone: string
     email: string
 }
